@@ -5,6 +5,8 @@
       <!-- Meta -->
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+        <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
       <!-- Favicon -->
       <link rel="shortcut icon" href="image/favicon.ico" type="image/x-icon">
@@ -903,9 +905,11 @@
             <!-- .row -->
             <div class="row">
                <div class="col-lg-12" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="600">
-                  <div class="map-wrapper" id="mapwrapper">
+                  <div class="map-wrapper" id="mapwrapper" style="height: 400px;">
+                      <!-- Map will be loaded here -->
                   </div>
-               </div>
+              </div>
+              
                <div class="col-lg-12 form-block" data-aos="fade-right" data-aos-duration="1500" data-aos-delay="1100">
                   <h3>Write me a message</h3>
                   <div class="form-message">
@@ -1013,6 +1017,20 @@
                });
             });
          </script>
+
+
+<script>
+   // Wait for the document to fully load
+   document.addEventListener('DOMContentLoaded', function () {
+       // Initialize the map in the mapwrapper div
+       var map = L.map('mapwrapper').setView([51.505, -0.09], 13); // Adjust lat/lng and zoom level as per your need
+
+       // Add OpenStreetMap tiles
+       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+           attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+       }).addTo(map);
+   });
+</script>
       </footer>
       <!-- .site-footer -->
       <script src="js/jquery.js"></script>
