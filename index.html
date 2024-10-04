@@ -936,38 +936,7 @@
                      Thank you! Your message has been sent successfully.
                   </div>
                   
-                  <script>
-                     // Add an event listener to handle the form submission
-                     document.getElementById('fungi-contact').addEventListener('submit', function(event) {
-                        event.preventDefault(); // Prevent the form from submitting immediately
-                  
-                        // Fetch the form data
-                        var formData = new FormData(this);
-                  
-                        // Send the form data to the Formspree endpoint
-                        fetch(this.action, {
-                           method: 'POST',
-                           body: formData,
-                           headers: {
-                              'Accept': 'application/json'
-                           }
-                        }).then(function(response) {
-                           if (response.ok) {
-                              // Show success message
-                              document.getElementById('successMessage').style.display = 'block';
-                  
-                              // Reset the form fields
-                              document.getElementById('fungi-contact').reset();
-                           } else {
-                              // Handle error response (if needed)
-                              alert('There was a problem submitting the form.');
-                           }
-                        }).catch(function(error) {
-                           // Handle any errors that may occur
-                           alert('There was a problem submitting the form.');
-                        });
-                     });
-                  </script>
+               
                   
                   <!-- .row -->
                </div>
@@ -1012,6 +981,38 @@
             <!-- .footer-bottom -->
          </div>
          <!-- .container -->
+         <script>
+            // Add an event listener to handle the form submission
+            document.getElementById('fungi-contact').addEventListener('submit', function(event) {
+               event.preventDefault(); // Prevent the form from submitting immediately
+         
+               // Fetch the form data
+               var formData = new FormData(this);
+         
+               // Send the form data to the Formspree endpoint
+               fetch(this.action, {
+                  method: 'POST',
+                  body: formData,
+                  headers: {
+                     'Accept': 'application/json'
+                  }
+               }).then(function(response) {
+                  if (response.ok) {
+                     // Show success message
+                     document.getElementById('successMessage').style.display = 'block';
+         
+                     // Reset the form fields
+                     document.getElementById('fungi-contact').reset();
+                  } else {
+                     // Handle error response (if needed)
+                     alert('There was a problem submitting the form.');
+                  }
+               }).catch(function(error) {
+                  // Handle any errors that may occur
+                  alert('There was a problem submitting the form.');
+               });
+            });
+         </script>
       </footer>
       <!-- .site-footer -->
       <script src="js/jquery.js"></script>
