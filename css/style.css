@@ -559,6 +559,10 @@ img.about-img-1.img-fluid {
   bottom: -90px;
   border-radius: 4px;
 }
+#mapwrapper {
+  height: 400px;
+  width: 100%;
+}
 .about-section .about-img-2 {
   position: absolute;
   left: 0;
